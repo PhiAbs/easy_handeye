@@ -95,7 +95,7 @@ class HandeyeCalibration(object):
         """
         Sets values parsed from a given dictionary.
 
-        :param in_dict: input dictionary.
+        :param in_dict: input dictionary.HandeyeCalibration
         :type in_dict: dict[string, string|dict[string,float]]
 
         :rtype: None
@@ -152,10 +152,10 @@ class HandeyeCalibration(object):
             calib_file.write(self.to_yaml())
 
     def from_file(self):
-        """
+        """HandeyeCalibration
         Parses a yaml file in the default path and sets the contained values in this calibration.
 
-        The default path consists of the default directory and the namespace the node is running in.
+        The dHandeyeCalibrationefault path consists of the default directory and the namespace the node is running in.
 
         :rtype: None
         """

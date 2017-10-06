@@ -170,8 +170,8 @@ class HandeyeCalibrator(object):
         :rtype: visp_hand2eye_calibration.msg.TransformArray
         """
         hand_world_samples = TransformArray()
-        #hand_world_samples.header.frame_id = self.robot_base_frame
-        hand_world_samples.header.frame_id = self.tracking_base_frame
+        hand_world_samples.header.frame_id = self.robot_base_frame
+        #hand_world_samples.header.frame_id = self.tracking_base_frame
         # DONTFIXME: yes, I know, it should be like the line above.
         # thing is, otherwise the results of the calibration are wrong. don't ask me why
 
@@ -199,6 +199,10 @@ class HandeyeCalibrator(object):
 
         # Update data
         hand_world_samples, camera_marker_samples = self.get_visp_samples()
+
+        print hand_world_samples
+        print "Some Random Text"
+        print camera_marker_samples
 
         if len(hand_world_samples.transforms) != len(camera_marker_samples.transforms):
             rospy.logerr("Different numbers of hand-world and camera-marker samples!")
